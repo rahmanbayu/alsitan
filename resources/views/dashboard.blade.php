@@ -5,19 +5,19 @@
 		</h2>
 	</x-slot>
 
-	{{-- <div class="py-5">
-		<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-			<div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
-				<div class="p-6 text-gray-900">
-					Selamat datang {{ Auth::user()->name }}!
-				</div>
-			</div>
-		</div>
-	</div> --}}
-
+	<!--<div class="py-5">-->
+	<!--	<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">-->
+	<!--		<div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">-->
+	<!--			<div class="p-6 text-gray-900">-->
+	<!--				Selamat datang {{ Auth::user()->name }}!-->
+	<!--			</div>-->
+	<!--		</div>-->
+	<!--	</div>-->
+	<!--</div>-->
 	<div class="flex flex-col items-center justify-center">
-		<img src="{{ asset('traktor.png') }}" alt="" class="w-1/3">
-		<div style="font-family: 'Pacifico';" class="text-center text-8xl text-gray-800">Siwa Sinta</div>
+		<div style="font-family: 'Pacifico';font-size: 6rem;" class="text-center text-gray-800">Siwa Sinta</div>
+		<img src="{{ asset('traktor.png') }}" class="w-1/2" style="width:50%" />
+
 	</div>
 
 	{{-- @if (Auth::user()->role == 'petani')

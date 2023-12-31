@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AlsitanController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PersetujuanController;
 use App\Http\Controllers\PersyaratanController;
 use App\Http\Controllers\PersyyaratanController;
@@ -48,6 +49,9 @@ Route::middleware('auth')->group(function () {
     });
 
     Route::middleware(['role:admin|staf'])->group(function (){
+        Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+        Route::post('/laporan', [LaporanController::class, 'download'])->name('laporan.download');
+
         Route::get('petani', [PetaniController::class, 'index'])->name('petani.index');
         Route::get('petani/create', [PetaniController::class, 'create'])->name('petani.create');
         Route::get('petani/{petani}/show', [PetaniController::class, 'show'])->name('petani.show');

@@ -56,6 +56,15 @@
 				</div>
 			@endif
 
+			@if (Auth::user()->role == 'admin' || Auth::user()->role == 'staf')
+				<div class="mt-5 px-2">
+					<div class="mb-4 px-2.5 font-mono text-[0.72rem] font-bold text-gray-500">Laporan</div>
+					<div class="space-y-1">
+						<a href="{{ route('laporan.index') }}" class="@if (Route::is(['laporan.index'])) bg-slate-950 @else bg-slate-900 @endif block rounded px-2.5 py-1.5 text-gray-300 transition-all duration-150 hover:bg-slate-950 hover:text-white">Laporan</a>
+					</div>
+				</div>
+			@endif
+
 			{{-- @if (Auth::user()->role == 'admin' || Auth::user()->role == 'staf')
 				<div class="mt-10 px-2">
 					<div class="mb-4 px-2.5 font-mono text-[0.72rem] font-bold text-gray-500">LAPORAN</div>
