@@ -24,12 +24,12 @@
 
 <body class="font-sans antialiased">
 	@include('sweetalert::alert')
-	<div class="flex min-h-screen flex-col md:flex-row">
+	<div class="flex flex-col min-h-screen md:flex-row">
 		<div class="hidden min-h-screen w-full bg-slate-900 md:block md:w-[20%]">
-			<div class="py-6 text-center font-mono text-sm font-black tracking-wider text-white">ALSITAN</div>
+			<div class="py-6 font-mono text-sm font-black tracking-wider text-center text-white">ALSITAN</div>
 			<div class="px-2"><a href="{{ route('dashboard') }}" class="@if (Route::is(['dashboard'])) bg-slate-950 @else bg-slate-900 @endif block rounded px-2.5 py-1.5 text-gray-300 transition-all duration-150 hover:bg-slate-950 hover:text-white">Dashboard</a></div>
 			@if (Auth::user()->role == 'admin' || Auth::user()->role == 'staf')
-				<div class="mt-5 px-2">
+				<div class="px-2 mt-5">
 					<div class="mb-4 px-2.5 font-mono text-[0.72rem] font-bold text-gray-500">MASTER</div>
 					<div class="space-y-1">
 						<a href="{{ route('petani.index') }}" class="@if (Route::is(['petani.index', 'petani.edit', 'petani.create', 'petani.show'])) bg-slate-950 @else bg-slate-900 @endif block rounded px-2.5 py-1.5 text-gray-300 transition-all duration-150 hover:bg-slate-950 hover:text-white">Petani</a>
@@ -43,7 +43,7 @@
 
 			@if (Auth::user()->role == 'admin' || Auth::user()->role == 'kadis' || Auth::user()->role == 'staf')
 
-				<div class="mt-10 px-2">
+				<div class="px-2 mt-10">
 					<div class="mb-4 px-2.5 font-mono text-[0.72rem] font-bold text-gray-500">PINJAM SEWA</div>
 					<div class="space-y-1">
 						@if (Auth::user()->role == 'admin' || Auth::user()->role == 'staf')
@@ -57,16 +57,17 @@
 			@endif
 
 			@if (Auth::user()->role == 'admin' || Auth::user()->role == 'staf')
-				<div class="mt-5 px-2">
+				<div class="px-2 mt-5">
 					<div class="mb-4 px-2.5 font-mono text-[0.72rem] font-bold text-gray-500">Laporan</div>
 					<div class="space-y-1">
+						<a href="{{ route('pengembalian.index') }}" class="@if (Route::is(['pengembalian.index'])) bg-slate-950 @else bg-slate-900 @endif block rounded px-2.5 py-1.5 text-gray-300 transition-all duration-150 hover:bg-slate-950 hover:text-white">Pengembalian</a>
 						<a href="{{ route('laporan.index') }}" class="@if (Route::is(['laporan.index'])) bg-slate-950 @else bg-slate-900 @endif block rounded px-2.5 py-1.5 text-gray-300 transition-all duration-150 hover:bg-slate-950 hover:text-white">Laporan</a>
 					</div>
 				</div>
 			@endif
 
 			{{-- @if (Auth::user()->role == 'admin' || Auth::user()->role == 'staf')
-				<div class="mt-10 px-2">
+				<div class="px-2 mt-10">
 					<div class="mb-4 px-2.5 font-mono text-[0.72rem] font-bold text-gray-500">LAPORAN</div>
 					<div class="space-y-1">
 						<a href="" class="block rounded px-2.5 py-1.5 text-gray-300 transition-all duration-150 hover:bg-slate-950 hover:text-white">SPK</a>
@@ -81,7 +82,7 @@
 			<!-- Page Heading -->
 			@if (isset($header))
 				<header class="px-4 md:px-1.5">
-					<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
+					<div class="flex items-center justify-between px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
 						{{ $header }}
 					</div>
 				</header>

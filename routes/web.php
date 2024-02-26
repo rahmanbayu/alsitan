@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlsitanController;
 use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\PengembalianController;
 use App\Http\Controllers\PersetujuanController;
 use App\Http\Controllers\PersyaratanController;
 use App\Http\Controllers\PersyyaratanController;
@@ -74,6 +75,9 @@ Route::middleware('auth')->group(function () {
         Route::get('persyaratan', [PersyaratanController::class, 'index'])->name('persyaratan.index');
         Route::post('persyaratan', [PersyaratanController::class, 'store'])->name('persyaratan.store');
         Route::post('check_nik', [PersyaratanController::class, 'check_nik'])->name('check_nik');
+
+        Route::get('/pengembalian', [PengembalianController::class, 'index'])->name('pengembalian.index');
+        Route::get('/pengembalian/{persyaratan}', [PengembalianController::class, 'export'])->name('pengembalian.export');
 
     });
 
