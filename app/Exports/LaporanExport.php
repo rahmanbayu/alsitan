@@ -105,6 +105,7 @@ class LaporanExport extends DefaultValueBinder  implements FromCollection, WithM
             ],
         ];
     }
+    
     public function registerEvents(): array
     {
         return [
