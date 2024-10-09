@@ -15,8 +15,6 @@ class SuratPernyataanController extends Controller
         if($persyaratan->status !== 'disetujui' || $persyaratan->petani->blacklist_at != null){
             abort(404);
         }
-        $persyaratan = Persyaratan::with(['petani', 'alsitan'])->first();
-
         return view('export.pernyataan', ['persyaratan' => $persyaratan]);
     }
 }
